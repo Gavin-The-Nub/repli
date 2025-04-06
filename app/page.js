@@ -42,9 +42,9 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center  bg-gray-100">
               <Image
-                src="/home.jpg"
+                src="/logo2.png"
                 alt="Freshly painted bike"
                 width={600}
                 height={400}
@@ -103,7 +103,7 @@ export default function HomePage() {
             </div>
             <div className="flex justify-center">
               <Image
-                src="/special2.jpg"
+                src="/home.jpg"
                 alt="Bike rim selection"
                 width={600}
                 height={400}
