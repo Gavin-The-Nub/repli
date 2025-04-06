@@ -1,14 +1,26 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, Send } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
+import { Phone, Mail, MapPin, Send, Navigation, Truck } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -19,22 +31,22 @@ export default function ContactPage() {
     bikeType: "",
     rimType: "",
     message: "",
-  })
+  });
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSelectChange = (name, value) => {
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // In a real application, you would send this data to your server
-    console.log("Form submitted:", formData)
-    alert("Thank you for your inquiry! We'll get back to you soon.")
+    console.log("Form submitted:", formData);
+    alert("Thank you for your inquiry! We'll get back to you soon.");
     setFormData({
       name: "",
       email: "",
@@ -43,14 +55,16 @@ export default function ContactPage() {
       bikeType: "",
       rimType: "",
       message: "",
-    })
-  }
+    });
+  };
 
   return (
     <div className="container px-4 py-12 md:px-6 md:py-24">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <div className="space-y-2">
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Contact Us</h1>
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            Contact Us
+          </h1>
           <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             Get in touch with us for a quote or to schedule a consultation.
           </p>
@@ -61,7 +75,10 @@ export default function ContactPage() {
         <Card>
           <CardHeader>
             <CardTitle>Get a Quote</CardTitle>
-            <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
+            <CardDescription>
+              Fill out the form below and we'll get back to you as soon as
+              possible.
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -103,15 +120,27 @@ export default function ContactPage() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="service">Service Interested In</Label>
-                <Select value={formData.service} onValueChange={(value) => handleSelectChange("service", value)}>
+                <Select
+                  value={formData.service}
+                  onValueChange={(value) =>
+                    handleSelectChange("service", value)
+                  }
+                >
                   <SelectTrigger id="service">
                     <SelectValue placeholder="Select a service" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="basic-repaint">Basic Repaint</SelectItem>
-                    <SelectItem value="premium-repaint">Premium Repaint</SelectItem>
+                    <SelectItem value="premium-repaint">
+                      Premium Repaint
+                    </SelectItem>
                     <SelectItem value="pro-repaint">Pro Repaint</SelectItem>
                     <SelectItem value="rim-purchase">Rim Purchase</SelectItem>
+                    <SelectItem value="touch-up">Paint Touch-Up</SelectItem>
+                    <SelectItem value="ppf">PPF Bike Skin</SelectItem>
+                    <SelectItem value="parts-painting">
+                      Parts Painting
+                    </SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
@@ -120,7 +149,9 @@ export default function ContactPage() {
                 <Label>Bike Type</Label>
                 <RadioGroup
                   defaultValue={formData.bikeType}
-                  onValueChange={(value) => handleSelectChange("bikeType", value)}
+                  onValueChange={(value) =>
+                    handleSelectChange("bikeType", value)
+                  }
                   className="flex flex-wrap gap-4"
                 >
                   <div className="flex items-center space-x-2">
@@ -150,7 +181,9 @@ export default function ContactPage() {
                   <Label>Rim Type</Label>
                   <RadioGroup
                     defaultValue={formData.rimType}
-                    onValueChange={(value) => handleSelectChange("rimType", value)}
+                    onValueChange={(value) =>
+                      handleSelectChange("rimType", value)
+                    }
                     className="flex flex-wrap gap-4"
                   >
                     <div className="flex items-center space-x-2">
@@ -183,7 +216,10 @@ export default function ContactPage() {
                   onChange={handleChange}
                 />
               </div>
-              <Button type="submit" className="w-full bg-gray-900 text-white hover:bg-gray-800">
+              <Button
+                type="submit"
+                className="w-full bg-gray-900 text-white hover:bg-gray-800"
+              >
                 <Send className="mr-2 h-4 w-4" />
                 Send Message
               </Button>
@@ -195,31 +231,54 @@ export default function ContactPage() {
           <Card>
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
-              <CardDescription>Reach out to us directly through any of these channels.</CardDescription>
+              <CardDescription>
+                Reach out to us directly through any of these channels.
+              </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-start gap-4">
                 <Phone className="h-5 w-5 text-gray-500" />
                 <div>
                   <h3 className="font-semibold">Phone</h3>
-                  <p className="text-sm text-gray-500">(123) 456-7890</p>
-                  <p className="text-sm text-gray-500">Monday - Friday, 9am - 6pm</p>
+                  <p className="text-sm text-gray-500">09951648978</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Mail className="h-5 w-5 text-gray-500" />
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-sm text-gray-500">info@bikerevive.com</p>
-                  <p className="text-sm text-gray-500">support@bikerevive.com</p>
+                  <p className="text-sm text-gray-500">
+                    info@repli-painting.com
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <MapPin className="h-5 w-5 text-gray-500" />
                 <div>
                   <h3 className="font-semibold">Address</h3>
-                  <p className="text-sm text-gray-500">123 Bike Street</p>
-                  <p className="text-sm text-gray-500">Cycle City, BC 12345</p>
+                  <p className="text-sm text-gray-500">
+                    BLK 171 LOT 1 Calachuchi st.
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Baranggay Pembo, Taguig City
+                  </p>
+                  <div className="mt-2">
+                    <a
+                      href="https://maps.app.goo.gl/TMj4ZoekmC11ruPi6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm text-gray-900 hover:underline"
+                    >
+                      <Navigation className="mr-1 h-4 w-4" />
+                      View on Google Maps
+                    </a>
+                  </div>
+                  <div className="mt-1">
+                    <p className="text-sm text-gray-500 flex items-center">
+                      <Truck className="mr-1 h-4 w-4" />
+                      Lalamove: Repli-Painting/Works
+                    </p>
+                  </div>
                 </div>
               </div>
             </CardContent>
@@ -227,8 +286,31 @@ export default function ContactPage() {
 
           <Card>
             <CardHeader>
+              <CardTitle>Our Location</CardTitle>
+              <CardDescription>
+                Visit our workshop in Taguig City.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="p-0 overflow-hidden rounded-b-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.2724304888824!2d121.05776!3d14.5367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8f8a0000001%3A0x7c0b7d2d1f1a1a1a!2sRepli-Painting%2FWorks!5e0!3m2!1sen!2sph!4v1617345678901!5m2!1sen!2sph"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Repli-Painting/Works Location"
+              ></iframe>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
               <CardTitle>Business Hours</CardTitle>
-              <CardDescription>When you can visit our workshop or call us.</CardDescription>
+              <CardDescription>
+                When you can visit our workshop or call us.
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
@@ -250,6 +332,5 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

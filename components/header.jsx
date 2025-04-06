@@ -15,6 +15,7 @@ export default function Header() {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
+    { name: "Rims", href: "/rims" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -22,7 +23,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold">Repli Painting</span>
+          <img src="/logo.png" alt="Repli Painting" className="h-8 md:h-10" />
         </Link>
 
         {isMobile ? (
@@ -34,18 +35,21 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col gap-4 pt-16">
+              <nav className="flex flex-col gap-4 pt-16 ">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block px-2 py-1 text-lg font-medium"
+                    className="block px-2 py-1 text-lg font-medium  hover:text-gray-600"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </Link>
                 ))}
-                <Button className="mt-4" asChild>
+                <Button
+                  className="mt-4 bg-gradient-to-r from-blue-500 to-purple-600"
+                  asChild
+                >
                   <Link href="/contact" onClick={() => setIsOpen(false)}>
                     Get a Quote
                   </Link>
@@ -59,7 +63,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium transition-colors hover:text-primary"
+                className="text-sm font-medium transition-colors  hover:text-gray-600 "
               >
                 {item.name}
               </Link>
@@ -67,8 +71,11 @@ export default function Header() {
           </nav>
         )}
 
-        <div className="hidden md:block">
-          <Button asChild>
+        <div className="hidden md:block ">
+          <Button
+            asChild
+            className="bg-gradient-to-r from-blue-500 to-purple-600"
+          >
             <Link href="/contact">Get a Quote</Link>
           </Button>
         </div>
