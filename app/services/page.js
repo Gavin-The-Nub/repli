@@ -498,7 +498,7 @@ export default function ServicesPage() {
           wheelsets for optimal performance.
         </p>
         <Link href="/rims" className="mt-6 inline-block">
-          <Button className="bg-gray-900 text-white hover:bg-gray-800">
+          <Button className=" bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:bg-gray-800">
             View Our Rims
           </Button>
         </Link>
