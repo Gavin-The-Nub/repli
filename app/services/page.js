@@ -220,7 +220,7 @@ export default function ServicesPage() {
                 </CardContent>
                 <CardFooter>
                   <Link href="/contact" className="w-full">
-                    <Button className="w-full bg-gray-900 text-white hover:bg-gray-800">
+                    <Button className="w-full  bg-gradient-to-r from-gray-900 to-gray-700  text-white hover:bg-gray-800">
                       Book Now
                     </Button>
                   </Link>
@@ -255,7 +255,7 @@ export default function ServicesPage() {
                 </CardContent>
                 <CardFooter>
                   <Link href="/contact" className="w-full">
-                    <Button className="w-full bg-gray-900 text-white hover:bg-gray-800">
+                    <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-700  text-white hover:bg-gray-800">
                       Book Now
                     </Button>
                   </Link>
@@ -290,7 +290,7 @@ export default function ServicesPage() {
                 </CardContent>
                 <CardFooter>
                   <Link href="/contact" className="w-full">
-                    <Button className="w-full bg-gray-900 text-white hover:bg-gray-800">
+                    <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-700  text-white hover:bg-gray-800">
                       Book Now
                     </Button>
                   </Link>

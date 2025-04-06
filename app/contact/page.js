@@ -218,7 +218,7 @@ export default function ContactPage() {
               </div>
               <Button
                 type="submit"
-                className="w-full bg-gray-900 text-white hover:bg-gray-800"
+                className="w-full  bg-gradient-to-r from-gray-900 to-gray-700  text-white hover:bg-gray-800"
               >
                 <Send className="mr-2 h-4 w-4" />
                 Send Message

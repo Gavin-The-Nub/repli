@@ -98,7 +98,7 @@ export default function RimsPage() {
       </div>
 
       {/* Promotional Banner */}
-      <div className="mx-auto max-w-5xl mt-8  bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-6 shadow-lg">
+      <div className="mx-auto max-w-5xl mt-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-6 shadow-lg">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Gift className="h-10 w-10 text-yellow-300" />
@@ -157,7 +157,7 @@ export default function RimsPage() {
             </CardContent>
             <CardFooter>
               <Link href="/contact" className="w-full">
-                <Button className="w-full bg-gray-900 text-white hover:bg-gray-800">
+                <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-700  text-white hover:bg-gray-800">
                   Order Now
                 </Button>
               </Link>
@@ -222,7 +222,7 @@ export default function RimsPage() {
 
       <div className="flex justify-center mt-12">
         <Link href="/contact">
-          <Button className=" bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:bg-gray-800 px-8 py-6 text-lg">
+          <Button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:bg-gray-800 px-8 py-6 text-lg">
             Contact Us to Order
           </Button>
         </Link>
