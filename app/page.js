@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+      <section className="w-full h-screen py-12 md:py-24 lg:py-4 bg-gray-100">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="flex flex-col justify-center space-y-4">
@@ -44,7 +44,7 @@ export default function HomePage() {
             </div>
             <div className="flex justify-center  bg-gray-100">
               <Image
-                src="/logo2.png"
+                src="/logo3.png"
                 alt="Freshly painted bike"
                 width={600}
                 height={400}
