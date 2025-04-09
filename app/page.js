@@ -49,6 +49,7 @@ export default function HomePage() {
                 width={600}
                 height={400}
                 className="rounded-lg object-cover"
+                priority
               />
             </div>
           </div>
