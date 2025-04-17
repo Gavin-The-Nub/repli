@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                   <div className="space-y-4">
                     <img
-                      src="/logo.png"
+                      src="/logo11.png"
                       alt="Repli Painting"
                       className="h-8 md:h-10"
                     />
@@ -79,7 +79,7 @@ export default function RootLayout({ children }) {
                       </li>
                       <li className="flex items-center gap-2">
                         <Mail className="h-4 w-4" />
-                        <span>info@repli-painting.com</span>
+                        <span>replipainting5@gmail.com</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <MapPin className="h-4 w-4 mt-0.5" />

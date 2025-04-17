@@ -148,7 +148,9 @@ export default function Header() {
                 className="flex items-center  hover:text-gray-300"
               >
                 <Mail className="h-4 w-4" />
-                <span className="hidden md:block">info@repli-painting.com</span>
+                <span className="hidden md:block">
+                  replipainting5@gmail.com
+                </span>
               </Link>
               <Link
                 href="tel:09951648978"
@@ -194,7 +196,7 @@ export default function Header() {
                 className="h-8 md:h-16"
               />
               <img
-                src="/logo1.png"
+                src="/logo11.png"
                 alt="Repli Painting"
                 className="h-8 md:h-10"
               />

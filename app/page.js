@@ -46,7 +46,7 @@ export default function HomePage() {
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
           <div className="space-y-4 max-w-4xl bg-black/60 p-10 ">
             <Image
-              src="/logo1.png"
+              src="/logo11.png"
               alt="Repli Painting"
               width={450}
               height={150}
