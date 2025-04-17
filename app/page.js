@@ -6,51 +6,74 @@ import {
   Paintbrush,
   Wrench,
   ShoppingCart,
-  Phone,
   Gift,
+  Check,
+  ChevronDown,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen mt-[-100px]">
       {/* Hero Section */}
-      <section className="w-full h-screen py-12 md:py-24 lg:py-4 bg-gray-100">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-            <div className="flex flex-col justify-center space-y-4">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  Premium Bike Repainting & Quality Rims
-                </h1>
-                <p className="max-w-[600px] text-gray-500 md:text-xl">
-                  Transform your ride with our professional bike repainting
-                  service and premium quality bike rims.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Link href="/services">
-                  <Button className="bg-gradient-to-r from-blue-500 to-purple-600">
-                    Our Services
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-                <Link href="/contact">
-                  <Button variant="outline">
-                    Contact Us
-                    <Phone className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-            <div className="flex justify-center  bg-gray-100">
+      <section className="w-full relative h-screen overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 w-full h-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 h-full">
+            <div className="relative h-full">
               <Image
-                src="/logo3.png"
-                alt="Freshly painted bike"
-                width={600}
-                height={400}
-                className="rounded-lg object-cover"
+                src="/work4.jpg"
+                alt="Bike repair tools"
+                fill
+                className="object-cover brightness-50"
                 priority
               />
+            </div>
+            <div className="relative h-full">
+              <Image
+                src="/work8.jpg"
+                alt="Carbon bike frame"
+                fill
+                className="object-cover brightness-50"
+                priority
+              />
+            </div>
+          </div>
+          <div className="absolute inset-0 bg-black/30"></div>
+        </div>
+
+        {/* Content Overlay */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+          <div className="space-y-4 max-w-4xl bg-black/60 p-10 ">
+            <Image
+              src="/logo1.png"
+              alt="Repli Painting"
+              width={450}
+              height={150}
+              className="mx-auto"
+              priority
+            />
+            <h2 className="text-2xl md:text-2xl font-medium uppercase tracking-wider">
+              BICYCLE
+            </h2>
+            <h1 className="text-3xl md:text-3xl font-bold">
+              <span className="text-violet-300">CARBON</span> REPAIR &{" "}
+              <span className="text-violet-300">CUSTOM</span> PAINT
+            </h1>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+              <Link href="/contact">
+                <Button
+                  className="bg-gradient-to-r from-blue-500 to-purple-600
+ text-white hover:bg-yellow-500  font-bold px-8 py-6 rounded-full text-sm"
+                >
+                  GET A QUOTE <ChevronRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="/services">
+                <Button className="bg-transparent hover:bg-white/20 border-2 border-white text-white font-bold px-8 py-6 rounded-full text-sm">
+                  OUR SERVICES
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -62,7 +85,7 @@ export default function HomePage() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Our Specialties
+                About Us
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 We offer professional bike repainting services and premium
@@ -72,30 +95,34 @@ export default function HomePage() {
           </div>
           <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
             <div className="flex flex-col justify-center space-y-4">
-              <div className="flex items-center space-x-4 rounded-lg bg-gray-100 p-4">
-                <Paintbrush className="h-10 w-10 text-gray-900" />
+              <div className="flex items-center space-x-4 rounded-lg bg-gray-50 p-4">
+                <Paintbrush className="h-10 w-10 text-violet-700" />
                 <div className="space-y-1">
-                  <h3 className="text-xl font-bold">Custom Repainting</h3>
+                  <h3 className="text-xl    text-violet-700">
+                    Custom Repainting
+                  </h3>
                   <p className="text-gray-500">
                     Professional bike repainting with custom colors, designs,
                     and finishes.
                   </p>
                 </div>
               </div>
-              <div className="flex items-center space-x-4 rounded-lg bg-gray-100 p-4">
-                <Wrench className="h-10 w-10 text-gray-900" />
+              <div className="flex items-center space-x-4 rounded-lg bg-gray-50 p-4">
+                <Wrench className="h-10 w-10 text-violet-700" />
                 <div className="space-y-1">
-                  <h3 className="text-xl font-bold">Frame Restoration</h3>
+                  <h3 className="text-xl  text-violet-700">
+                    Frame Restoration
+                  </h3>
                   <p className="text-gray-500">
                     Complete frame restoration including rust removal and
                     surface preparation.
                   </p>
                 </div>
               </div>
-              <div className="flex items-center space-x-4 rounded-lg bg-gray-100 p-4">
-                <ShoppingCart className="h-10 w-10 text-gray-900" />
+              <div className="flex items-center space-x-4 rounded-lg bg-gray-50 p-4">
+                <ShoppingCart className="h-8 w-8  text-violet-700" />
                 <div className="space-y-1">
-                  <h3 className="text-xl font-bold">Premium Rims</h3>
+                  <h3 className="text-xl   text-violet-700">Premium Rims</h3>
                   <p className="text-gray-500">
                     High-quality rims for road bikes, mountain bikes, and more.
                   </p>
@@ -114,188 +141,167 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {/* Rim Product Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                REPLI High-Gloss Rims
-              </h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Premium carbon fiber rims and wheelsets for optimal performance
-              </p>
+
+      <section>
+        <div className="space-y-8 max-w-2xl mx-auto p-4">
+          {/* Facebook Profile */}
+          <div className="border rounded-lg shadow-sm overflow-hidden">
+            <div className="bg-white p-4">
+              <div className="flex items-center gap-4">
+                <Link
+                  href="https://www.facebook.com/RepliPainting1218CA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative"
+                >
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 flex items-center justify-center">
+                    <div className="w-[92%] h-[92%] rounded-full overflow-hidden border-2 border-white">
+                      <img
+                        src="/sm1.jpg"
+                        alt="Profile"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </Link>
+                <div className="flex-1">
+                  <div className="flex flex-col">
+                    <Link
+                      href="https://www.facebook.com/RepliPainting1218CA"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 hover:underline"
+                    >
+                      <h3 className="font-bold text-lg">REPLI Painting</h3>
+                    </Link>
+                    <div className="text-sm text-gray-500">
+                      @RepliPainting1218CA
+                    </div>
+                  </div>
+                </div>
+                <div className="flex gap-2">
+                  <Link
+                    href="https://www.facebook.com/RepliPainting1218CA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-600 text-white rounded-md px-4 py-1.5 text-sm font-medium"
+                  >
+                    Follow
+                  </Link>
+                  <Link
+                    href="https://www.facebook.com/RepliPainting1218CA/messages"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-200 text-black rounded-md px-4 py-1.5 text-sm font-medium hidden md:block"
+                  >
+                    Message
+                  </Link>
+                </div>
+              </div>
+
+              <div className="flex gap-6 mt-4 text-sm">
+                <div className="flex items-center gap-1">
+                  <div className="font-semibold">260K </div>
+                  <div className="text-gray-500">Followers</div>
+                </div>
+                <div className="flex items-center gap-1">
+                  <div className="font-semibold">9</div>
+                  <div className="text-gray-500">Following</div>
+                </div>
+              </div>
+
+              <div className="mt-4 text-sm">
+                <div className="text-gray-700">Custom bike painting</div>
+                <div className="text-gray-700">
+                  Blk 171 Lot 1 Calachuchi St. Pembo, Taguig City
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Promotional Banner */}
-          <div
-            className="mx-auto max-w-5xl mt-8 bg-gradient-to-r from-blue-500 to-purple-600
- text-white rounded-lg p-6 shadow-lg"
-          >
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <Gift className="h-10 w-10 text-yellow-300" />
+          {/* TikTok Profile */}
+          <div className="border rounded-lg shadow-sm overflow-hidden">
+            <div className="bg-white p-4">
+              <div className="flex items-start gap-4">
+                <Link
+                  href="https://www.tiktok.com/@repliworx?lang=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative"
+                >
+                  <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-200">
+                    <img
+                      src="/sm2.jpeg"
+                      alt="Profile"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </Link>
+                <div className="flex-1">
+                  <Link
+                    href="https://www.tiktok.com/@repliworx?lang=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    <h3 className="font-bold text-lg">@repliworx</h3>
+                  </Link>
+                  <div className="text-sm font-medium text-gray-500">
+                    REPLI Painting
+                  </div>
+
+                  <div className="flex gap-4 mt-3">
+                    <Link
+                      href="https://www.tiktok.com/@repliworx?lang=en"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-[#fe2c55] text-white rounded-md px-6 py-1.5 text-sm font-medium"
+                    >
+                      Follow
+                    </Link>
+                    <button className="bg-transparent border border-gray-300 rounded-md px-2 py-1.5">
+                      <ChevronDown className="h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex gap-6 mt-4 text-sm">
                 <div>
-                  <h3 className="text-xl font-bold">Special Promotion!</h3>
-                  <p>Every purchase gives you a chance to win prizes!</p>
+                  <div className="font-semibold">226</div>
+                  <div className="text-gray-500">Following</div>
+                </div>
+                <div>
+                  <div className="font-semibold">132K</div>
+                  <div className="text-gray-500">Followers</div>
+                </div>
+                <div>
+                  <div className="font-semibold">1.7M</div>
+                  <div className="text-gray-500">Likes</div>
                 </div>
               </div>
-              <div className="text-sm md:text-base">
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>
-                    Spin the wheel and win up to 50% discount on REPLI painting
-                  </li>
-                  <li>Cash back via GCash up to ₱1,000</li>
-                </ul>
-              </div>
-            </div>
-          </div>
 
-          <div className="mx-auto grid max-w-5xl gap-6 py-12 md:grid-cols-2">
-            {/* Set A */}
-            <div className="flex flex-col rounded-lg border bg-white overflow-hidden">
-              <div className="relative h-48 w-full">
-                <Image
-                  src="/rims2.jpg"
-                  alt="Set A - Asymmetric Profile Rims"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold">
-                  Set A - Asymmetric Profile
-                </h3>
-                <p className="text-sm text-gray-500 mt-1">
-                  40mm front x 50mm rear / 20x24 holes
-                </p>
-                <div className="mt-4 space-y-4">
-                  <div className="rounded-lg bg-gray-50 p-4">
-                    <p className="font-semibold">SET A1 - Rims Only</p>
-                    <p className="text-xl font-bold text-gray-900 mt-1">
-                      ₱6,299
-                    </p>
-                    <ul className="mt-2 text-sm text-gray-500 space-y-1">
-                      <li>40mm front depth, 20 holes</li>
-                      <li>50mm rear depth, 24 holes</li>
-                    </ul>
-                  </div>
-
-                  <div className="rounded-lg bg-gray-50 p-4">
-                    <p className="font-semibold">
-                      SET A2 - Wheelset for Rim Brakes
-                    </p>
-                    <p className="text-xl font-bold text-gray-900 mt-1">
-                      ₱11,999
-                    </p>
-                    <ul className="mt-2 text-sm text-gray-500 space-y-1">
-                      <li>40mm front depth, 20 holes</li>
-                      <li>50mm rear depth, 24 holes</li>
-                      <li>Novatec Hub 20x24 (A3612BT/F362TSBT)</li>
-                    </ul>
-                  </div>
-
-                  <div className="rounded-lg bg-gray-50 p-4">
-                    <p className="font-semibold">
-                      SET A3 - Wheelset for Fixed Gear
-                    </p>
-                    <p className="text-xl font-bold text-gray-900 mt-1">
-                      ₱11,999
-                    </p>
-                    <ul className="mt-2 text-sm text-gray-500 space-y-1">
-                      <li>40mm front depth, 20 holes</li>
-                      <li>50mm rear depth, 24 holes</li>
-                      <li>Novatec hub 20x24</li>
-                    </ul>
-                  </div>
-
-                  <div className="rounded-lg bg-gray-50 p-4">
-                    <p className="font-semibold">
-                      SET A4 - Wheelset for Fixed Gear
-                    </p>
-                    <p className="text-xl font-bold text-gray-900 mt-1">
-                      ₱10,999
-                    </p>
-                    <ul className="mt-2 text-sm text-gray-500 space-y-1">
-                      <li>40mm front depth, 20 holes</li>
-                      <li>50mm rear depth, 24 holes</li>
-                      <li>Polso hubs 20x24 FH001</li>
-                    </ul>
-                  </div>
+              <div className="mt-4 text-sm">
+                <div className="text-gray-700">
+                  Custom bike painting from the Philippines
                 </div>
+                <div className="text-gray-700">📩 DM for quote 📩</div>
+                <div className="text-gray-700">📞 0995 164 8978</div>
               </div>
             </div>
 
-            {/* Set B */}
-            <div className="flex flex-col rounded-lg border bg-white overflow-hidden">
-              <div className="relative h-48 w-full">
-                <Image
-                  src="/rims3.jpg"
-                  alt="Set B - Symmetric Profile Rims"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold">Set B - Symmetric Profile</h3>
-                <p className="text-sm text-gray-500 mt-1">
-                  50mm front x 50mm rear / 24x24 holes
-                </p>
-                <div className="mt-4 space-y-4">
-                  <div className="rounded-lg bg-gray-50 p-4">
-                    <p className="font-semibold">SET B1 - Rims Only</p>
-                    <p className="text-xl font-bold text-gray-900 mt-1">
-                      ₱6,999
-                    </p>
-                    <ul className="mt-2 text-sm text-gray-500 space-y-1">
-                      <li>50mm front depth, 24 holes</li>
-                      <li>50mm rear depth, 24 holes</li>
-                    </ul>
-                  </div>
-
-                  <div className="rounded-lg bg-gray-50 p-4">
-                    <p className="font-semibold">
-                      SET B2 - Wheelset for Rim Brakes
-                    </p>
-                    <p className="text-xl font-bold text-gray-900 mt-1">
-                      ₱12,999
-                    </p>
-                    <ul className="mt-2 text-sm text-gray-500 space-y-1">
-                      <li>50mm front depth, 24 holes</li>
-                      <li>50mm rear depth, 24 holes</li>
-                      <li>Novatec Hub 24x24 (A3612BT/F362TSBT)</li>
-                    </ul>
-                  </div>
-
-                  <div className="rounded-lg bg-gray-50 p-4">
-                    <p className="font-semibold">
-                      SET B3 - Wheelset for Disc Brakes
-                    </p>
-                    <p className="text-xl font-bold text-gray-900 mt-1">
-                      ₱15,499
-                    </p>
-                    <ul className="mt-2 text-sm text-gray-500 space-y-1">
-                      <li>50mm front depth, 24 holes</li>
-                      <li>50mm rear depth, 24 holes</li>
-                      <li>Novatec Hub 24x24 (D791SB/D792SB)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+            <div className="flex border-t">
+              <button className="flex-1 py-2 font-medium text-center border-b-2 border-black">
+                Videos
+              </button>
+              <button className="flex-1 py-2 font-medium text-center text-gray-500">
+                Liked
+              </button>
             </div>
-          </div>
-          <div className="flex justify-center mt-8">
-            <Link href="/contact">
-              <Button className=" bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:bg-gray-800">
-                Contact Us to Order
-              </Button>
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -310,31 +316,97 @@ export default function HomePage() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-3">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="flex flex-col justify-between rounded-lg border bg-white p-6 shadow-sm"
-              >
-                <div className="space-y-4">
-                  <div className="space-y-2">
-                    <p className="text-sm font-medium leading-none">★★★★★</p>
-                    <h3 className="text-lg font-bold">Amazing Results</h3>
-                    <p className="text-sm text-gray-500">
-                      "My bike looks brand new after the repaint. The attention
-                      to detail was incredible and the color is exactly what I
-                      wanted."
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4 pt-4">
-                  <div className="rounded-full bg-gray-200 h-10 w-10"></div>
-                  <div>
-                    <p className="text-sm font-medium">Customer {i}</p>
-                    <p className="text-xs text-gray-500">Bike Enthusiast</p>
-                  </div>
+            {/* Testimonial 1 */}
+            <div className="flex flex-col justify-between rounded-lg border bg-white p-6 shadow-sm">
+              <div className="space-y-4">
+                <p className="text-sm font-medium leading-none  text-yellow-400">
+                  ★★★★★
+                </p>
+                <h3 className="text-lg font-bold">Great Experience</h3>
+                <p className="text-sm text-gray-500">
+                  "Great experience, on time ang expected finish ng project.
+                  Communication is there. Maganda rin magsuggest. Finished
+                  product exceeds your expectations."
+                </p>
+              </div>
+              <div className="flex items-center space-x-4 pt-4">
+                <img
+                  src="/c1.jpg"
+                  alt="Francis Anthoney Bautista Tizon"
+                  className="h-10 w-10 rounded-full object-cover"
+                />
+                <div>
+                  <p className="text-sm font-medium">
+                    Francis Anthoney Bautista Tizon
+                  </p>
+                  <p className="text-xs text-gray-500">a year ago</p>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="flex flex-col justify-between rounded-lg border bg-white p-6 shadow-sm">
+              <div className="space-y-4">
+                <p className="text-sm font-medium leading-none  text-yellow-400">
+                  ★★★★★
+                </p>
+                <h3 className="text-lg font-bold">Exceeded Expectations</h3>
+                <p className="text-sm text-gray-500">
+                  "Sobrang napahanga ako sa gawa ni Sir Neil, Ang ganda ng
+                  kinalabasan kahit inabot ng ilang weeks sulit na sulit naman,
+                  wala akong masabi kundi WOWWW galing mo sir 'REPLI PAINTING' I
+                  highly recommend 100%"
+                </p>
+              </div>
+              <div className="flex items-center space-x-4 pt-4">
+                <img
+                  src="/c2.jpg"
+                  alt="Lua Azol"
+                  className="h-10 w-10 rounded-full object-cover"
+                />
+                <div>
+                  <p className="text-sm font-medium">Lua Azol</p>
+                  <p className="text-xs text-gray-500">a year ago</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="flex flex-col justify-between rounded-lg border bg-white p-6 shadow-sm">
+              <div className="space-y-4">
+                <p className="text-sm font-medium leading-none text-yellow-400">
+                  ★★★★★
+                </p>
+                <h3 className="text-lg font-bold">Pulido at Quality</h3>
+                <p className="text-sm text-gray-500">
+                  "Highly recommended! Sobra pulido at quality ng gawa! Kung
+                  puede lang pa repaint every month haha!"
+                </p>
+              </div>
+              <div className="flex items-center space-x-4 pt-4">
+                <img
+                  src="/c3.jpg"
+                  alt="Arnold Samson"
+                  className="h-10 w-10 rounded-full object-cover"
+                />
+                <div>
+                  <p className="text-sm font-medium">Arnold Samson</p>
+                  <p className="text-xs text-gray-500">a year ago</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Reviews Link */}
+          <div className="text-center mt-8">
+            <a
+              href="https://www.facebook.com/RepliPainting1218CA/reviews" // Replace with your actual link
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 font-medium hover:underline"
+            >
+              Read more reviews on Facebook →
+            </a>
           </div>
         </div>
       </section>
