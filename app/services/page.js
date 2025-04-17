@@ -6,42 +6,43 @@ import { ChevronRight } from "lucide-react";
 export default function Service2Page() {
   const services = [
     {
+      id: "custom-paint",
+      title: "DECORATIVE CUSTOM PAINT",
+      titleHighlight: "DECORATIVE",
+      description:
+        "Your bike, your style — exactly how you imagined it. Our team works closely with you to bring custom designs to life, tailored to your vision from start to finish.\n\nWe paint frames and parts from any brand and material — carbon, alloy, steel, titanium — no limitations. Whether it’s a wild concept or a subtle colorway, we’re here to make it real.\n\nWith deep roots in the custom paint world and years of hands-on experience across different industries, we’ve refined our skills to deliver flawless results. What sets us apart is our eye for detail, creative process, and commitment to quality.\n\nWe’ve partnered with bike brands, painted for pros, and created show-stopping looks for collectors, clubs, teams, and everyday riders. If it rolls, we can make it look incredible.",
+      image: "/ss2.jpg",
+      imageAlt: "Custom painted bike frame",
+      imagePosition: "left",
+    },
+    {
       id: "carbon-repair",
       title: "CARBON REPAIR",
       titleHighlight: "CARBON",
       description:
-        "We are the leading carbon repair specialists, we have seen it all and can fix it. Broken, cracked, nicked, or chipped, no problem. We provide the highest quality of workmanship and professional customer service in all our work. We ensure your carbon bicycle frames are safely repaired and while the paint might not be a perfect match, we'll do our best to make it blend in seamlessly. Our repairs are guaranteed with our limited lifetime warranty.",
-      image: "/work1.jpg",
+        "We’re specialists in carbon frame repair from cracks and breaks to chips and dings, we’ve seen it all and we can fix it. Our expert workmanship and professional service ensure your bike is returned safe, strong, and ride-ready. While paint match may not be exact, we’ll blend it as seamlessly as possible",
+      image: "/ss1.jpg",
       imageAlt: "Carbon fiber repair close-up",
-      imagePosition: "left",
-    },
-    {
-      id: "custom-paint",
-      title: "CUSTOM PAINT",
-      titleHighlight: "CUSTOM",
-      description:
-        "Our experienced team will work with you to design your custom bike, the way you've always wanted. We will paint any bike manufacturers frame and any frame material or bicycle part. We specialize in custom projects.\n\nWith years of custom paint experience in various industries and it's his talent, techniques and attention to detail that sets us apart from our competitors. We are the best in the business!\n\nWe paint bikes directly for bike manufactuers. We do custom paint for limited edition sales, pro cycling teams, clubs, athletes and individuals. There is no limit on what we can do.",
-      image: "/work3.jpg",
-      imageAlt: "Custom painted bike frame",
       imagePosition: "right",
     },
+
     {
       id: "production-paint",
-      title: "PRODUCTION PAINT",
-      titleHighlight: "PRODUCTION",
+      title: "MASS PRODUCTION PAINT",
+      titleHighlight: "MASS",
       description:
-        "We specialize in production painting in large quanities. We can manage all your needs of design and production, making it easy and simple for you and your team.\n\nHave your raw frames shipped straight from manufacturing and we will paint, apply decals and finishing touches ready for your warehouse and retailers.\n\nWhether its a small fleet of custom bikes or a run of hundreds, we guarantee our work just the same. We set turn around times and deliver on time.",
-      image: "/work4.jpg",
+        "Need consistent, high-quality paintwork at scale? We’ve got you covered. Our production paint services are built for volume — whether it’s dozens or hundreds of frames.\n\nSend your frames directly and we’ll handle the rest: priming, painting, decals, and all finishing details. Once complete, they’re ready to ship straight to your warehouse or retail partners.\n\nWe’re set up to keep things efficient and reliable, without cutting corners. You’ll get clear timelines, consistent quality, and on-time delivery — every time.",
+      image: "/ss3.jpg",
       imageAlt: "Production paint process",
       imagePosition: "left",
     },
     {
       id: "in-house-designers",
-      title: "IN HOUSE DESIGNERS",
-      titleHighlight: "IN",
+      title: "REPLI DESIGN IDEAS",
+      titleHighlight: "REPLI",
       description:
-        "Not sure where to start? Leave it to us. Our in-house designers can create just about anything. Our talented designers specialize in color and the team will work with you to select the perfect color palette to compliment your vision.\n\nWant an original one of a kind masterpiece, we can do it. Have a idea, but not sure how to make it a reality, we can create it. Sky is the limit, matching components, patterns, colors, We create custom designs everyday to suit personal style & esthetic.",
-      image: "/work5.jpg",
+        "Not sure how you want your bike to look? We can help ir you want us to handle with our own creative design. REPLI are great at coming up with custom ideas and color schemes that match your style.\n\nWhether you want something clean and classic or bold and unique, we’ll work with you to bring your vision to life.\n\n We can match colors, add patterns, and design every detail to make your bike truly one of a kind.",
+      image: "/ss4.jpg",
       imageAlt: "Designer working on bike design",
       imagePosition: "right",
     },
@@ -50,8 +51,8 @@ export default function Service2Page() {
       title: "PAINT TOUCH UP",
       titleHighlight: "PAINT",
       description:
-        "Does it bother you that your expensive bike was mishandled and scratched at the coffee shop? Perhaps you forgot to put frame protector tape on to stop cable rub on the head tube? What about an errant stone flying up and hitting your frame chipping the paint?\n\nThese examples along with and general rub marks and scratches from daily use that occur when you use your bicycle. All these can be repaired to make your bicycle unblemished again.\n\nWe will touch up your chips, scratches and other paint blemishes to look brand new again.",
-      image: "/work7.jpg",
+        "Scratches happen — whether it’s from leaning your bike at the café, forgetting frame protection, or getting hit by flying gravel on the road. Even regular use can leave marks over time.\n\nWe’ll fix those chips, scuffs, and scratches, restoring your frame to a fresh, like-new finish. Plus, we apply a new clear coat with extra paint protection to keep your bike looking great and safer from future damage.",
+      image: "/ss5.jpg",
       imageAlt: "Paint touch up process",
       imagePosition: "left",
     },

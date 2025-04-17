@@ -74,8 +74,8 @@ export default function Header() {
 
   useEffect(() => {
     const header = headerRef.current;
+    if (!header) return;
 
-    // Set initial state
     gsap.set(header, {
       y: 0,
       position: "fixed",
@@ -84,36 +84,55 @@ export default function Header() {
       zIndex: 50,
     });
 
-    // Create a function to handle scroll
+    let lastScrollY = window.scrollY;
+    let isHidden = false;
+
+    const threshold = 150;
+    const animationDuration = 0.5; // slower and smoother
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const scrollDelta = currentScrollY - lastScrollY;
 
-      // If scrolling down and past 100px, hide the header
-      if (currentScrollY > prevScrollY.current && currentScrollY > 100) {
+      // Scroll Down
+      if (scrollDelta > 5 && currentScrollY > threshold && !isHidden) {
         gsap.to(header, {
           y: "-100%",
-          duration: 0.3,
-          ease: "power2.inOut",
+          duration: animationDuration,
+          ease: "power2.out",
         });
-      }
-      // If scrolling up, show the header
-      else if (currentScrollY < prevScrollY.current) {
-        gsap.to(header, {
-          y: 0,
-          duration: 0.3,
-          ease: "power2.inOut",
-        });
+        isHidden = true;
       }
 
-      prevScrollY.current = currentScrollY;
+      // Scroll Up
+      if (scrollDelta < -5 && isHidden) {
+        gsap.to(header, {
+          y: "0%",
+          duration: animationDuration,
+          ease: "power2.out",
+        });
+        isHidden = false;
+      }
+
+      lastScrollY = currentScrollY;
     };
 
-    // Add scroll event listener
-    window.addEventListener("scroll", handleScroll);
+    let ticking = false;
 
-    // Clean up
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", onScroll);
     };
   }, []);
 
