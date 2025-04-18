@@ -179,7 +179,7 @@ export default function Header() {
                 className="hover:text-gray-300"
               >
                 <span className="hidden md:block">
-                  BLK 171 LOT 1 Calachuchi st. Baranggay Pembo, Taguig City
+                  BLK 171 LOT 1 Calachuchi st.  Baranggay Pembo, Taguig City
                 </span>
               </Link>
             </div>
