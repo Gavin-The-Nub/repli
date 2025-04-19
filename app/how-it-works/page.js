@@ -68,27 +68,8 @@ export default function HowItWorksPage() {
       number: 6,
       title: "Returning Your Bike",
       description:
-        "After the job is complete, we will reach out to you to settle the remaining balance, after which we will arrange the return of your bike via:",
+        "After the job is complete, we will reach out to you to settle the remaining balance, after which we will arrange the return of your bike via: Shipment or pick up.",
       icon: <Bike className="w-12 h-12 text-yellow-500" />,
-      options: [
-        {
-          title: "Local or Satellite Pick Up",
-          description:
-            "Wherein you let us know the date and time you would like to drop by and pick it up.",
-          icon: <Store className="w-8 h-8 text-yellow-500" />,
-        },
-        {
-          title: "Affiliated Bike Shop Pick Up",
-          description:
-            "Wherein we ship the frame back to the affiliated bike shop, and they will hand it off to you.",
-          icon: <Store className="w-8 h-8 text-yellow-500" />,
-        },
-        {
-          title: "Direct Shipment",
-          description: "Wherein we ship the bike to your address.",
-          icon: <TruckDelivery className="w-8 h-8 text-yellow-500" />,
-        },
-      ],
     },
   ];
 

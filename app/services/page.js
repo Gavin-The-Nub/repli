@@ -76,6 +76,16 @@ export default function Service2Page() {
       imageAlt: "Vintage bike restoration",
       imagePosition: "left",
     },
+    {
+      id: "custom-airbrush-paint",
+      title: "CUSTOM AIRBRUSH PAINT ",
+      titleHighlight: "CUSTOM ",
+      description:
+        "From soft fades to intense graphics, we use airbrush techniques to create one-of-a-kind paint designs that push the boundaries. Any style, any color, any idea if you can dream it, we can paint it. No templates. No shortcuts. No limits.",
+      image: "/ss6.jpg",
+      imageAlt: "Vintage bike restoration",
+      imagePosition: "right",
+    },
   ];
 
   return (

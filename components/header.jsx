@@ -37,13 +37,14 @@ export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const serviceItems = [
-    { name: "Carbon Repair", href: "/services#carbon-repair" },
     { name: "Custom Paint", href: "/services#custom-paint" },
+    { name: "Carbon Repair", href: "/services#carbon-repair" },
     { name: "Production Paint", href: "/services#production-paint" },
-    { name: "In House Designers", href: "/services#in-house-designers" },
+    { name: "Repli Designs", href: "/services#in-house-designers" },
     { name: "Paint Touch Up", href: "/services#paint-touch-up" },
     { name: "Graphics & Decals", href: "/services#graphics-decals" },
     { name: "Restorations", href: "/services#restorations" },
+    { name: "Airbrush Paint", href: "/services#custom-airbrush-paint" },
   ];
 
   const shopItems = [
@@ -179,7 +180,7 @@ export default function Header() {
                 className="hover:text-gray-300"
               >
                 <span className="hidden md:block">
-                  BLK 171 LOT 1 Calachuchi st.  Baranggay Pembo, Taguig City
+                  BLK 171 LOT 1 Calachuchi st. Baranggay Pembo, Taguig City
                 </span>
               </Link>
             </div>
