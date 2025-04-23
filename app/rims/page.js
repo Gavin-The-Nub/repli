@@ -19,35 +19,26 @@ export default function RimsPage() {
       variants: [
         {
           name: "SET A1 - Rims Only",
-          price: "₱6,299",
-          specs: ["40mm front depth, 20 holes", "50mm rear depth, 24 holes"],
+          price: "₱6,499",
+          specs: ["40mm front x 50mm rear / 20x24 holes"],
         },
         {
           name: "SET A2 - Wheelset for Rim Brakes",
           price: "₱11,999",
           specs: [
-            "40mm front depth, 20 holes",
-            "50mm rear depth, 24 holes",
+            "40mm front x 50mm rear / 20x24 holes",
             "Novatec Hub 20x24 (A3612BT/F362TSBT)",
           ],
         },
         {
           name: "SET A3 - Wheelset for Fixed Gear",
           price: "₱11,999",
-          specs: [
-            "40mm front depth, 20 holes",
-            "50mm rear depth, 24 holes",
-            "Novatec hub 20x24",
-          ],
+          specs: ["40mm front x 50mm rear / 20x24 holes", "Novatec hub 20x24"],
         },
         {
           name: "SET A4 - Wheelset for Fixed Gear",
-          price: "₱10,999",
-          specs: [
-            "40mm front depth, 20 holes",
-            "50mm rear depth, 24 holes",
-            "Polso hubs 20x24 FH001",
-          ],
+          price: "₱11,499",
+          specs: ["40mm front x 50mm rear / 20x24 holes", "Polso hub 20x24"],
         },
       ],
       image: "/rims2.jpg",
@@ -58,26 +49,29 @@ export default function RimsPage() {
       variants: [
         {
           name: "SET B1 - Rims Only",
-          price: "₱6,999",
-          specs: ["50mm front depth, 24 holes", "50mm rear depth, 24 holes"],
+          price: "₱7,499",
+          specs: ["50mm front x 50mm rear / 24x24 holes"],
         },
         {
           name: "SET B2 - Wheelset for Rim Brakes",
           price: "₱12,999",
           specs: [
-            "50mm front depth, 24 holes",
-            "50mm rear depth, 24 holes",
+            "50mm front x 50mm rear / 24x24 holes",
             "Novatec Hub 24x24 (A3612BT/F362TSBT)",
           ],
         },
         {
           name: "SET B3 - Wheelset for Disc Brakes",
-          price: "₱15,499",
+          price: "₱15,999",
           specs: [
-            "50mm front depth, 24 holes",
-            "50mm rear depth, 24 holes",
+            "50mm front x 50mm rear / 24x24 holes",
             "Novatec Hub 24x24 (D791SB/D792SB)",
           ],
+        },
+        {
+          name: "SET B4 - Wheelset for Fixed Gear",
+          price: "₱12,999",
+          specs: ["50mm front x 50mm rear / 24x24 holes", "Polso Hub"],
         },
       ],
       image: "/rim1.jpg",
@@ -157,7 +151,7 @@ export default function RimsPage() {
             </CardContent>
             <CardFooter>
               <Link href="/contact" className="w-full">
-                <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-700  text-white hover:bg-gray-800">
+                <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-700 text-white hover:bg-gray-800">
                   Order Now
                 </Button>
               </Link>
@@ -183,38 +177,21 @@ export default function RimsPage() {
               Why Choose REPLI Rims?
             </h3>
             <ul className="grid md:grid-cols-2 gap-3 mt-4">
-              <li className="flex items-start gap-2">
-                <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>Premium carbon fiber construction</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>Lightweight design for improved acceleration</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>Aerodynamic profile reduces drag</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>High-gloss finish for premium appearance</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>Compatible with various hub types</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>Excellent braking surface (for rim brake models)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>Durable construction for long-term use</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                <span>Precision-engineered spoke holes</span>
-              </li>
+              {[
+                "Premium carbon fiber construction",
+                "Lightweight design for improved acceleration",
+                "Aerodynamic profile reduces drag",
+                "High-gloss finish for premium appearance",
+                "Compatible with various hub types",
+                "Excellent braking surface (for rim brake models)",
+                "Durable construction for long-term use",
+                "Precision-engineered spoke holes",
+              ].map((feature, index) => (
+                <li key={index} className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <span>{feature}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
