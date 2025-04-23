@@ -69,39 +69,39 @@ export default function ServicesPage() {
                 <tbody>
                   <tr>
                     <td className="border p-3">Road Bike (Carbon)</td>
-                    <td className="border p-3 text-center">₱8,999</td>
-                    <td className="border p-3 text-center">₱12,999</td>
-                    <td className="border p-3 text-center">₱18,999</td>
+                    <td className="border p-3 text-center">₱10,499</td>
+                    <td className="border p-3 text-center">₱14,499</td>
+                    <td className="border p-3 text-center">₱20,499</td>
                   </tr>
                   <tr className="bg-gray-50">
                     <td className="border p-3">Road Bike (Alloy/Steel)</td>
-                    <td className="border p-3 text-center">₱5,999</td>
-                    <td className="border p-3 text-center">₱9,999</td>
-                    <td className="border p-3 text-center">₱13,999</td>
+                    <td className="border p-3 text-center">₱7,499</td>
+                    <td className="border p-3 text-center">₱11,499</td>
+                    <td className="border p-3 text-center">₱15,499</td>
                   </tr>
                   <tr>
                     <td className="border p-3">MTB (Carbon)</td>
-                    <td className="border p-3 text-center">₱9,999</td>
-                    <td className="border p-3 text-center">₱12,999</td>
-                    <td className="border p-3 text-center">₱18,999</td>
+                    <td className="border p-3 text-center">₱11,499</td>
+                    <td className="border p-3 text-center">₱14,499</td>
+                    <td className="border p-3 text-center">₱20,499</td>
                   </tr>
                   <tr className="bg-gray-50">
                     <td className="border p-3">MTB (Alloy/Steel)</td>
-                    <td className="border p-3 text-center">₱5,999</td>
-                    <td className="border p-3 text-center">₱9,999</td>
-                    <td className="border p-3 text-center">₱15,999</td>
+                    <td className="border p-3 text-center">₱7,499</td>
+                    <td className="border p-3 text-center">₱11,499</td>
+                    <td className="border p-3 text-center">₱17,499</td>
                   </tr>
                   <tr>
                     <td className="border p-3">Full Suspension (Carbon)</td>
-                    <td className="border p-3 text-center">₱10,999</td>
-                    <td className="border p-3 text-center">₱14,999</td>
-                    <td className="border p-3 text-center">₱19,999</td>
+                    <td className="border p-3 text-center">₱12,499</td>
+                    <td className="border p-3 text-center">₱16,499</td>
+                    <td className="border p-3 text-center">₱21,499</td>
                   </tr>
                   <tr className="bg-gray-50">
                     <td className="border p-3">Full Suspension (Alloy)</td>
-                    <td className="border p-3 text-center">₱8,999</td>
-                    <td className="border p-3 text-center">₱13,999</td>
-                    <td className="border p-3 text-center">₱18,999</td>
+                    <td className="border p-3 text-center">₱10,499</td>
+                    <td className="border p-3 text-center">₱15,499</td>
+                    <td className="border p-3 text-center">₱20,499</td>
                   </tr>
                 </tbody>
               </table>

@@ -80,7 +80,7 @@ export default function RimsPage() {
           ],
         },
       ],
-      image: "/rim1.webp",
+      image: "/rim1.jpg",
     },
   ];
 
