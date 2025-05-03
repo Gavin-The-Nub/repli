@@ -22,9 +22,20 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { Send } from "lucide-react";
+import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+// Fix: Remove one of the duplicate imports - keep only one sendEmail import
+import { sendEmail } from "../actions/send-email.js";
+import { useToast } from "../hooks/use-toast.js";
+// Remove this duplicate import: import { sendEmail } from "@/actions/send-email.js"
 
 export default function GetAQuotePage() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formStatus, setFormStatus] = useState({
+    message: "",
+    type: "", // "success" or "error"
+  });
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,20 +55,63 @@ export default function GetAQuotePage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // In a real application, you would send this data to your server
-    console.log("Form submitted:", formData);
-    alert("Thank you for your inquiry! We'll get back to you soon.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      bikeType: "",
-      rimType: "",
-      message: "",
-    });
+    setIsSubmitting(true);
+    setFormStatus({ message: "", type: "" });
+
+    try {
+      const result = await sendEmail(formData);
+
+      if (result.success) {
+        setFormStatus({
+          message: result.message,
+          type: "success",
+        });
+
+        // Reset form on success
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          bikeType: "",
+          rimType: "",
+          message: "",
+        });
+
+        toast({
+          title: "Success!",
+          description: result.message,
+          variant: "default",
+        });
+      } else {
+        setFormStatus({
+          message: result.message,
+          type: "error",
+        });
+
+        toast({
+          title: "Error",
+          description: result.message,
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setFormStatus({
+        message: "An unexpected error occurred. Please try again.",
+        type: "error",
+      });
+
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -108,155 +162,196 @@ export default function GetAQuotePage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Name</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    placeholder="Your name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
+              {formStatus.type === "success" ? (
+                <div className="flex flex-col items-center justify-center py-8 text-center">
+                  <CheckCircle className="h-16 w-16 text-green-500 mb-4" />
+                  <h3 className="text-2xl font-semibold mb-2">Thank You!</h3>
+                  <p className="text-gray-600 mb-6">{formStatus.message}</p>
+                  <Button
+                    onClick={() => setFormStatus({ message: "", type: "" })}
+                    className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:bg-gray-800"
+                  >
+                    Submit Another Request
+                  </Button>
                 </div>
-                <div className="grid gap-4 md:grid-cols-2">
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="name">Name</Label>
                     <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="Your email"
+                      id="name"
+                      name="name"
+                      placeholder="Your name"
                       required
-                      value={formData.email}
+                      value={formData.name}
                       onChange={handleChange}
+                      disabled={isSubmitting}
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="Your phone number"
-                      value={formData.phone}
-                      onChange={handleChange}
-                    />
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="Your email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        disabled={isSubmitting}
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone</Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="Your phone number"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        disabled={isSubmitting}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="service">Service Interested In</Label>
-                  <Select
-                    value={formData.service}
-                    onValueChange={(value) =>
-                      handleSelectChange("service", value)
-                    }
-                  >
-                    <SelectTrigger id="service">
-                      <SelectValue placeholder="Select a service" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="basic-repaint">
-                        Basic Repaint
-                      </SelectItem>
-                      <SelectItem value="premium-repaint">
-                        Premium Repaint
-                      </SelectItem>
-                      <SelectItem value="pro-repaint">Pro Repaint</SelectItem>
-                      <SelectItem value="rim-purchase">Rim Purchase</SelectItem>
-                      <SelectItem value="touch-up">Paint Touch-Up</SelectItem>
-                      <SelectItem value="ppf">PPF Bike Skin</SelectItem>
-                      <SelectItem value="parts-painting">
-                        Parts Painting
-                      </SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="space-y-2">
-                  <Label>Bike Type</Label>
-                  <RadioGroup
-                    defaultValue={formData.bikeType}
-                    onValueChange={(value) =>
-                      handleSelectChange("bikeType", value)
-                    }
-                    className="flex flex-wrap gap-4"
-                  >
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="road" id="road" />
-                      <Label htmlFor="road">Road Bike</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="mountain" id="mountain" />
-                      <Label htmlFor="mountain">Mountain Bike</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="bmx" id="bmx" />
-                      <Label htmlFor="bmx">BMX</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="gravel" id="gravel" />
-                      <Label htmlFor="gravel">Gravel Bike</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="other" id="other-bike" />
-                      <Label htmlFor="other-bike">Other</Label>
-                    </div>
-                  </RadioGroup>
-                </div>
-                {formData.service === "rim-purchase" && (
                   <div className="space-y-2">
-                    <Label>Rim Type</Label>
-                    <RadioGroup
-                      defaultValue={formData.rimType}
+                    <Label htmlFor="service">Service Interested In</Label>
+                    <Select
+                      value={formData.service}
                       onValueChange={(value) =>
-                        handleSelectChange("rimType", value)
+                        handleSelectChange("service", value)
+                      }
+                      disabled={isSubmitting}
+                    >
+                      <SelectTrigger id="service">
+                        <SelectValue placeholder="Select a service" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="basic-repaint">
+                          Basic Repaint
+                        </SelectItem>
+                        <SelectItem value="premium-repaint">
+                          Premium Repaint
+                        </SelectItem>
+                        <SelectItem value="pro-repaint">Pro Repaint</SelectItem>
+                        <SelectItem value="rim-purchase">
+                          Rim Purchase
+                        </SelectItem>
+                        <SelectItem value="touch-up">Paint Touch-Up</SelectItem>
+                        <SelectItem value="ppf">PPF Bike Skin</SelectItem>
+                        <SelectItem value="parts-painting">
+                          Parts Painting
+                        </SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Bike Type</Label>
+                    <RadioGroup
+                      defaultValue={formData.bikeType}
+                      onValueChange={(value) =>
+                        handleSelectChange("bikeType", value)
                       }
                       className="flex flex-wrap gap-4"
+                      disabled={isSubmitting}
                     >
                       <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="set-a1" id="set-a1" />
-                        <Label htmlFor="set-a1">Set A1 (Rims Only)</Label>
+                        <RadioGroupItem value="road" id="road" />
+                        <Label htmlFor="road">Road Bike</Label>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="set-a2" id="set-a2" />
-                        <Label htmlFor="set-a2">
-                          Set A2 (Complete Wheelset)
-                        </Label>
+                        <RadioGroupItem value="mountain" id="mountain" />
+                        <Label htmlFor="mountain">Mountain Bike</Label>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="set-b1" id="set-b1" />
-                        <Label htmlFor="set-b1">Set B1 (Rims Only)</Label>
+                        <RadioGroupItem value="bmx" id="bmx" />
+                        <Label htmlFor="bmx">BMX</Label>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="set-b2" id="set-b2" />
-                        <Label htmlFor="set-b2">
-                          Set B2 (Complete Wheelset)
-                        </Label>
+                        <RadioGroupItem value="gravel" id="gravel" />
+                        <Label htmlFor="gravel">Gravel Bike</Label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="other" id="other-bike" />
+                        <Label htmlFor="other-bike">Other</Label>
                       </div>
                     </RadioGroup>
                   </div>
-                )}
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="Tell us about your project or inquiry"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:bg-gray-800"
-                >
-                  <Send className="mr-2 h-4 w-4" />
-                  Send Message
-                </Button>
-              </form>
+                  {formData.service === "rim-purchase" && (
+                    <div className="space-y-2">
+                      <Label>Rim Type</Label>
+                      <RadioGroup
+                        defaultValue={formData.rimType}
+                        onValueChange={(value) =>
+                          handleSelectChange("rimType", value)
+                        }
+                        className="flex flex-wrap gap-4"
+                        disabled={isSubmitting}
+                      >
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="set-a1" id="set-a1" />
+                          <Label htmlFor="set-a1">Set A1 (Rims Only)</Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="set-a2" id="set-a2" />
+                          <Label htmlFor="set-a2">
+                            Set A2 (Complete Wheelset)
+                          </Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="set-b1" id="set-b1" />
+                          <Label htmlFor="set-b1">Set B1 (Rims Only)</Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="set-b2" id="set-b2" />
+                          <Label htmlFor="set-b2">
+                            Set B2 (Complete Wheelset)
+                          </Label>
+                        </div>
+                      </RadioGroup>
+                    </div>
+                  )}
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Tell us about your project or inquiry"
+                      rows={4}
+                      value={formData.message}
+                      onChange={handleChange}
+                      disabled={isSubmitting}
+                    />
+                  </div>
+
+                  {formStatus.type === "error" && (
+                    <div className="flex items-center p-4 text-sm border rounded-md border-red-200 bg-red-50 text-red-600">
+                      <AlertCircle className="h-4 w-4 mr-2 flex-shrink-0" />
+                      <p>{formStatus.message}</p>
+                    </div>
+                  )}
+
+                  <Button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:bg-gray-800"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="mr-2 h-4 w-4" />
+                        Send Message
+                      </>
+                    )}
+                  </Button>
+                </form>
+              )}
             </CardContent>
           </Card>
         </div>
