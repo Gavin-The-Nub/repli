@@ -187,7 +187,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="flex justify-center mt-8">
-              <Link href="/contact">
+              <Link href="/get-a-quote">
                 <Button className=" bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:bg-gray-800">
                   Get a Quote
                 </Button>
@@ -231,7 +231,7 @@ export default function ServicesPage() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Link href="/contact" className="w-full">
+                  <Link href="/get-a-quote" className="w-full">
                     <Button className="w-full  bg-gradient-to-r from-gray-900 to-gray-700  text-white hover:bg-gray-800">
                       Book Now
                     </Button>
@@ -266,7 +266,7 @@ export default function ServicesPage() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Link href="/contact" className="w-full">
+                  <Link href="/get-a-quote" className="w-full">
                     <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-700  text-white hover:bg-gray-800">
                       Book Now
                     </Button>
@@ -301,7 +301,7 @@ export default function ServicesPage() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Link href="/contact" className="w-full">
+                  <Link href="/get-a-quote" className="w-full">
                     <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-700  text-white hover:bg-gray-800">
                       Book Now
                     </Button>
@@ -392,7 +392,7 @@ export default function ServicesPage() {
                   </div>
                 </CardContent>
                 <CardFooter className="justify-center">
-                  <Link href="/contact">
+                  <Link href="/get-a-quote">
                     <Button className=" bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:bg-gray-800">
                       Book PPF Installation
                     </Button>
@@ -491,7 +491,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="flex justify-center mt-8">
-              <Link href="/contact">
+              <Link href="/get-a-quote">
                 <Button className=" bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:bg-gray-800">
                   Get a Quote
                 </Button>

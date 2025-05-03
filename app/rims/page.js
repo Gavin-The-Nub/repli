@@ -150,7 +150,7 @@ export default function RimsPage() {
               </div>
             </CardContent>
             <CardFooter>
-              <Link href="/contact" className="w-full">
+              <Link href="/get-a-quote" className="w-full">
                 <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-700 text-white hover:bg-gray-800">
                   Order Now
                 </Button>
@@ -198,7 +198,7 @@ export default function RimsPage() {
       </div>
 
       <div className="flex justify-center mt-12">
-        <Link href="/contact">
+        <Link href="/get-a-quote">
           <Button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:bg-gray-800 px-8 py-6 text-lg">
             Contact Us to Order
           </Button>

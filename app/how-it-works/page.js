@@ -178,7 +178,7 @@ export default function HowItWorksPage() {
             quote for our professional services.
           </p>
           <Link
-            href="/contact"
+            href="/get-a-quote"
             className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold px-8 py-4 rounded-full inline-flex items-center"
           >
             GET A QUOTE

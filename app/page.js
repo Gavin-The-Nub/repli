@@ -61,7 +61,7 @@ export default function HomePage() {
               <span className="text-violet-300">CUSTOM</span> PAINT
             </h1>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Link href="/contact">
+              <Link href="/get-a-quote">
                 <Button
                   className="bg-gradient-to-r from-blue-500 to-purple-600
  text-white hover:bg-yellow-500  font-bold px-8 py-6 rounded-full text-sm"
@@ -532,7 +532,7 @@ export default function HomePage() {
           </div>
 
           <div className="flex justify-center mt-10">
-            <Link href="/contact">
+            <Link href="/get-a-quote">
               <Button className=" bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:bg-gray-800">
                 Get Your Bike Repainted
               </Button>

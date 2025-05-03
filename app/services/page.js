@@ -173,7 +173,7 @@ export default function Service2Page() {
             Contact us today to discuss your project and get a personalized
             quote for our professional services.
           </p>
-          <Link href="/contact">
+          <Link href="/get-a-quote">
             <Button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold px-8 py-6 rounded-full">
               GET A QUOTE <ChevronRight className="ml-2 h-5 w-5" />
             </Button>

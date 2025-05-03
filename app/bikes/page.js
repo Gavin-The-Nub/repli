@@ -43,7 +43,7 @@ export default function BikesPage() {
             asChild
             className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold px-8 py-6 rounded-full"
           >
-            <Link href="/contact">
+            <Link href="/get-a-quote">
               GET NOTIFIED WHEN AVAILABLE{" "}
               <ChevronRight className="ml-2 h-5 w-5" />
             </Link>

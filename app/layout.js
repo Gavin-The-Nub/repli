@@ -64,7 +64,10 @@ export default function RootLayout({ children }) {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/contact" className="hover:text-yellow-300">
+                        <Link
+                          href="/get-a-quote"
+                          className="hover:text-yellow-300"
+                        >
                           Contact
                         </Link>
                       </li>
