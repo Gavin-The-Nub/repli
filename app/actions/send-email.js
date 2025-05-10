@@ -15,7 +15,7 @@ export async function sendEmail(formData) {
 
     const { data, error } = await resend.emails.send({
       from: "Quote Request <noreply@replipainting.com>",
-      to: ["lodorian18@gmail.com"],
+      to: ["replipainting5@gmail.com"],
       subject: subject,
       react: QuoteRequestEmail(formData),
       reply_to: formData.email,
