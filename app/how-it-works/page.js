@@ -32,17 +32,12 @@ export default function HowItWorksPage() {
       icon: <Bike className="w-12 h-12 text-yellow-500" />,
       options: [
         {
-          title: "Local or Satellite Drop Off",
+          title: "Local Drop Off",
           description:
             "You can drop off your bike right at our doorstep, or at one of our drop off locations.",
           icon: <Store className="w-8 h-8 text-yellow-500" />,
         },
-        {
-          title: "Affiliated Bike Shop Drop Off",
-          description:
-            "You can also drop off at an affiliated bike shop. They can offer you assembly/disassembly services if you required, and the bike shop will also handle the logistics of transporting the bike to us for paint or repair.",
-          icon: <Store className="w-8 h-8 text-yellow-500" />,
-        },
+
         {
           title: "Direct Shipment",
           description: "You can ship your bike directly to us.",
@@ -124,7 +119,7 @@ export default function HowItWorksPage() {
 
                 {/* Options inside the same yellow border */}
                 {step.options && (
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 w-full">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mt-12 w-full">
                     {step.options.map((option, optIndex) => (
                       <div
                         key={optIndex}

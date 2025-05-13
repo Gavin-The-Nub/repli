@@ -17,54 +17,121 @@ import {
 export default function FAQsPage() {
   const faqs = [
     {
-      question: "How long does a typical bike paint job take?",
+      question: "What types of bikes or parts can you custom paint?",
       answer:
-        "A standard paint job typically takes 2-3 weeks from the time we receive your bike. Custom designs or more complex work may take longer. We'll provide you with a specific timeline when you submit your quote request.",
+        "We paint frames and components from any brand and any material — carbon, alloy, steel, or titanium. Whether it's a flashy concept or a subtle tone, we work with you to make it real.",
     },
     {
-      question: "Do you offer pickup and delivery services?",
+      question: "Can you help design a custom look if I don't have one?",
       answer:
-        "Yes, we offer several options for getting your bike to us and back to you. You can drop off and pick up directly at our workshop, use one of our affiliated bike shops, or arrange for shipping. See our 'How It Works' page for more details.",
+        "Absolutely! Our in-house REPLI designers can suggest styles, match colors, and come up with unique designs that match your personality or goals. We'll guide you from concept to final layout.",
     },
     {
-      question: "What types of bikes do you work on?",
+      question: "Do you repair carbon fiber frames?",
       answer:
-        "We work on all types of bikes including road bikes, mountain bikes, BMX, gravel bikes, and more. Our services are suitable for carbon, aluminum, steel, and titanium frames.",
+        "Yes, we specialize in carbon frame repairs — from cracks and breaks to chips and dings. While color matching may not be exact, we blend the repair to be as seamless as possible.",
     },
     {
-      question: "How much does a custom paint job cost?",
+      question: "Can you fix small scratches or chips in my bike's paint?",
       answer:
-        "The cost varies depending on the complexity of the design, the type of paint used, and the amount of prep work required. Basic repaints start at ₱15,000, while more complex custom designs can range from ₱25,000 to ₱50,000+. Contact us for a personalized quote.",
+        "Yes, we offer paint touch-up services for chips, scuffs, and minor scratches. Your frame will be restored to a like-new finish.",
     },
     {
-      question: "Can you match a specific color or design?",
+      question: "Do you handle high-volume paint jobs?",
       answer:
-        "Yes! We can match virtually any color or recreate specific designs. Our in-house designers can also help you create a completely custom look for your bike.",
+        "Yes! Our production paint service is built for scale — whether you're sending a few dozen or hundreds of frames. We handle everything from priming and painting to decals and finish work.",
     },
     {
-      question: "Do you offer frame repairs?",
+      question: "How involved can I be in the custom paint process?",
       answer:
-        "Yes, we specialize in carbon fiber frame repairs. We can fix cracks, chips, and other damage to restore the structural integrity of your frame.",
+        "We work closely with you every step of the way — from selecting colors and finishes to choosing patterns and layout. Your input is key in bringing your vision to life.",
     },
     {
-      question: "What payment methods do you accept?",
+      question: "Is there a limit to the design complexity you can handle?",
       answer:
-        "We accept bank transfers, GCash, PayMaya, and cash payments. For custom projects, we typically require a 50% deposit to begin work, with the remaining balance due upon completion.",
+        "Not at all. From simple repaints to detailed custom art, our team has years of experience delivering flawless results. If you can imagine it, we'll find a way to paint it.",
     },
     {
-      question: "Is my bike insured while in your possession?",
+      question: "How long does a typical service take?",
       answer:
-        "Yes, all bikes in our care are covered by our workshop insurance policy against damage, theft, or loss while on our premises.",
+        "It depends on the service. Custom paint jobs usually take 2–3 weeks. Touch-ups and minor repairs are faster. For production orders, we'll provide a clear timeline up front.",
     },
     {
-      question: "Can I get just parts of my bike painted?",
+      question: "Can you match specific colors or replicate designs I like?",
       answer:
-        "We can paint individual components like forks, stems, handlebars, or any other part you'd like to customize.",
+        "Yes. We can match almost any color and recreate reference designs. Just send us the inspiration or photos, and we'll take it from there.",
     },
     {
-      question: "Do you offer any guarantees on your work?",
+      question: "Do you guarantee the quality of your work?",
       answer:
-        "Yes, we offer warranties on all our services. Carbon repairs come with a limited lifetime warranty, paint work is warranted for 2 years against peeling or cracking, and rim purchases have a 1-year warranty. See our Warranty page for full details.",
+        "Yes. Our services are backed by warranties. Carbon repairs are covered by a limited lifetime warranty, and paint work is guaranteed against peeling or cracking for 2 years.",
+    },
+
+    // How It Works Section
+    {
+      question: "How do I start the repair or paint job process?",
+      answer:
+        "Simply fill out our online quotation form with your bike's details, the service you're looking for, and upload some reference images. It only takes a few minutes!",
+    },
+    {
+      question: "What happens after I submit the quotation form?",
+      answer:
+        "We'll review your request and send you a personalized quotation. If you approve, a down payment will be needed to kick off the process.",
+    },
+    {
+      question: "How do I get my bike to you?",
+      answer:
+        "You can choose to either drop it off locally at our shop or one of our drop-off locations, or ship it directly to us—whatever is easiest for you.",
+    },
+    {
+      question: "Will I be notified when my bike arrives at your facility?",
+      answer:
+        "Yes! We'll confirm receipt of your bike and schedule it into our work queue right away.",
+    },
+    {
+      question: "How long does the repair or paint job take?",
+      answer:
+        "It usually takes 2 to 3 weeks, depending on the complexity of the job. We'll send you periodic updates throughout the process.",
+    },
+    {
+      question: "How do I get my bike back once it's finished?",
+      answer:
+        "Once the work is done and the remaining balance is paid, we'll coordinate with you for either pickup or return shipping—whichever works best for you.",
+    },
+
+    // New FAQs from pricing information
+    {
+      question: "What are your frame painting service prices?",
+      answer:
+        "Our frame painting prices vary by bike type and finish level. For carbon road bikes, prices range from ₱10,499 (Basic) to ₱20,499 (Decorative). For alloy/steel road bikes, prices range from ₱7,499 to ₱15,499. Carbon MTB frames range from ₱11,499 to ₱20,499, while alloy/steel MTB frames range from ₱7,499 to ₱17,499. For full suspension bikes, carbon frames range from ₱12,499 to ₱21,499, and alloy frames from ₱10,499 to ₱20,499.",
+    },
+    {
+      question:
+        "What's the difference between Basic, Advance, and Decorative paint services?",
+      answer:
+        "Basic includes single color application with painted decals and standard finish. Advance offers multi-color application, medium complexity designs, matte/gloss finish options, and hypershifting colors (Chameleon, Pearl). Decorative features super detailed designs, airbrush techniques, hydro graphics, and premium finish for the most distinctive look.",
+    },
+    {
+      question: "What are your touch-up service options and prices?",
+      answer:
+        "We offer three levels of touch-up services: Basic Touch-Up (₱4,999) for spot repairs with color matching and seamless blending; Advance Touch-Up (₱8,999) for multiple area repairs with precise color matching, surface preparation, and clear coat application; and Complex Touch-Up (₱12,999) for major damage repair with extensive surface preparation, complete color restoration, and multiple clear coat layers.",
+    },
+    {
+      question: "Do you offer paint protection film (PPF) for bikes?",
+      answer:
+        "Yes, we offer PPF Bike Skin Protection for ₱4,999, available for all bike types including Hardtail, Full Suspension, MTB, Road Bike, and Gravel bikes. PPF protects against scratches and chips, prevents UV fading, features self-healing properties for minor scratches, preserves resale value, and provides virtually invisible protection.",
+    },
+    {
+      question:
+        "Can you paint individual bike components and what are the prices?",
+      answer:
+        "Yes, we paint individual components with options for Basic, Advance, and Decorative finishes. Forks range from ₱3,499 to ₱7,499; wheels from ₱8,999 to ₱18,999; handlebars from ₱1,499 to ₱2,499; stems from ₱999 to ₱1,999; full integrated dropbars from ₱2,499 to ₱4,499; and cranksets from ₱3,999 to ₱7,999.",
+    },
+    {
+      question:
+        "Do you offer any special finishes or techniques for bike painting?",
+      answer:
+        "Yes, we offer a variety of special finishes and techniques depending on the service level. Our Advance paint service includes hypershifting colors like Chameleon and Pearl finishes, while our Decorative service features airbrush techniques and hydro graphics for truly unique designs.",
     },
   ];
 

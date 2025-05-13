@@ -437,11 +437,8 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-4">
-                <h3 className="font-semibold">Mountain Bike Restoration</h3>
-                <p className="text-sm text-gray-500">
-                  Complete frame restoration with custom red and black paint
-                  scheme
-                </p>
+                <h3 className="font-semibold"></h3>
+                <p className="text-sm text-gray-500"></p>
               </div>
             </div>
 
@@ -455,10 +452,8 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-4">
-                <h3 className="font-semibold">Vintage Road Bike</h3>
-                <p className="text-sm text-gray-500">
-                  Metallic blue finish with chrome accents and custom decals
-                </p>
+                <h3 className="font-semibold"></h3>
+                <p className="text-sm text-gray-500"></p>
               </div>
             </div>
 
@@ -472,10 +467,8 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-4">
-                <h3 className="font-semibold">Custom BMX Design</h3>
-                <p className="text-sm text-gray-500">
-                  Urban graffiti inspired design with protective clear coat
-                </p>
+                <h3 className="font-semibold"></h3>
+                <p className="text-sm text-gray-500"></p>
               </div>
             </div>
 
@@ -489,10 +482,8 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-4">
-                <h3 className="font-semibold">Gravel Bike Makeover</h3>
-                <p className="text-sm text-gray-500">
-                  Sunset gradient paint scheme with matte finish
-                </p>
+                <h3 className="font-semibold"></h3>
+                <p className="text-sm text-gray-500"></p>
               </div>
             </div>
 
@@ -506,10 +497,8 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-4">
-                <h3 className="font-semibold">Racing Team Build</h3>
-                <p className="text-sm text-gray-500">
-                  Custom team colors with sponsor logos and high-gloss finish
-                </p>
+                <h3 className="font-semibold"></h3>
+                <p className="text-sm text-gray-500"></p>
               </div>
             </div>
 
@@ -523,10 +512,8 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-4">
-                <h3 className="font-semibold">Urban Commuter</h3>
-                <p className="text-sm text-gray-500">
-                  Minimalist design with scratch-resistant coating for daily use
-                </p>
+                <h3 className="font-semibold"></h3>
+                <p className="text-sm text-gray-500"></p>
               </div>
             </div>
           </div>
